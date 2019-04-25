@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex">
+        <title>
+            {% if page.rank and page.name %}
+                {{ page.rank }} {{ page.name }} |
+            {% elsif page.title %}
+                {{ page.title }} |
+            {% endif %}
+            {{ site.title }}
+        </title>
+        <link rel="stylesheet" href="/stat/main.css">
+    </head>
+    <body>
+        {{ content }}
+    </body>
+</html>

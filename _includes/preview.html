@@ -1,0 +1,11 @@
+<article class="preview">
+    <img src="/img/{{ include.article.img }}" alt="">
+    <time datetime="{{ include.article.date |date_to_xmlschema }}" class="minor">
+        {{ include.article.date |date: '%d. %m. %Y' }}
+    </time>
+    <h2> {{ include.article.title }} </h2>
+    <p> {{ include.article.excerpt }} </p>
+    <a href="{{ include.article.url }}" class="minor hover">
+        &#8594; Celý článek: {{ include.article.title }}
+    </a>
+</article>

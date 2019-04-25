@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+header {
+    position: relative;
+    height: 30vh;
+    overflow: hidden;
+    border-bottom: 0.2rem solid transparent;
+    box-sizing: border-box;
+}
+header > a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    padding: 0.2rem;
+}
+header > img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+header::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 30vh;
+}
+header > h1,
+header > p,
+header > .portrait,
+header > time {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    width: 60rem;
+    z-index: 1;
+}
+header > h1 {
+    margin: 0;
+    height: calc(30vh - 1.2rem);
+    display: flex;
+    flex-direction: column-reverse;
+}
+header > time {
+    text-align: end;
+    right: 0;
+    bottom: 0;
+}
+header > p {
+    margin: 0;
+    bottom: 0;
+}
+header > .portrait {
+    bottom: 0;
+    margin: 0;
+    text-align: end;
+}
+header > .portrait > img {
+    width: 4rem;
+    height: 4rem;
+}
+
+.hybrid-header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 10vh;
+}
+
+
+footer {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100%;
+    margin-top: 1rem;
+}
+
+
+main {
+    width: 60rem;
+    max-width: 100%;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    margin: auto;
+}
+main img {
+  max-width: 100%;
+}
+main::after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: left;
+}
+main > p {
+    clear: left;
+}
+main > p > img {
+    float: left;
+}
+
+section {
+    padding: 0.2rem;
+    max-width: 100%;
+}
+section > h1, section > h2 {
+    margin: 0;
+}
+section.intro {
+    width: 30rem;
+}
+section.officers {
+    flex-direction: column;
+    align-items: flex-end;
+}
+section.officers > h2 {
+    font-size: 1.3rem;
+}
+.officer {
+    display: grid;
+    grid-template-columns: 2.6rem 9rem;
+    grid-template-rows: 0.8rem 1rem 0.8rem;
+    grid-column-gap: 0.2rem;
+    margin: 0.3rem;
+}
+.officer > img {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    width: 100%;
+    height: 100%;
+}
+.officer > .rank {
+    grid-column: 2;
+    grid-row: 1;
+}
+.officer > .name {
+    grid-column: 2;
+    grid-row: 2;
+    white-space: nowrap;
+}
+.officer > .house {
+    grid-column: 2;
+    grid-row: 3;
+}
+main > .officer {
+    float: right;
+}
+
+article.preview {
+    position: relative;
+    padding: 0.5rem 0.5rem 1.5rem;
+    max-width: 50rem;
+    margin: auto;
+    overflow: hidden;
+}
+article.preview > img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -10%;
+    width: 50%;
+    height: auto;
+    min-height: 120%;
+    z-index: -1;
+}
+article.preview > a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.2rem 0.5rem;
+    display: flex;
+    flex-direction: column-reverse;
+}
+article.preview > p {
+    margin: 0;
+}
+article.preview > h2, article.preview > h3 {
+    margin: 0;
+}
+
+
+.stripe {
+    width: 60rem;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.stripe > .head {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-top: 0.3rem;
+}
+.stripe > article {
+    width: 100%;
+    box-sizing: border-box;
+}
+@media (min-width: 60em) {
+    .stripe > article {
+        width: 50%;
+        margin: 0;
+    }
+}
+dl.stripe {
+    flex-direction: column;
+}
+dl.stripe > dt {
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+dl.stripe > dd {
+    margin: 0;
+}
+@media (min-width: 30rem) {
+    dl.stripe {
+        display: grid;
+        grid-template-rows: 0.8rem auto;
+        grid-gap: 0.2rem;
+        grid-auto-columns: 1fr;
+    }
+    dl.stripe > dt {
+        grid-row: 1;
+        margin: 0;
+    }
+    dl.stripe > dd {
+        grid-row: 2;
+    }
+}

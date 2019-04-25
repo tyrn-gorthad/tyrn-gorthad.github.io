@@ -1,0 +1,35 @@
+---
+layout: base
+title:
+---
+
+<div class="hybrid-header">
+    <section class="intro">
+        {% capture home_md %}
+            {% include home.md %}
+        {% endcapture %}
+        {{ home_md |markdownify }}
+    </section>
+
+    <section class="officers">
+        <h2> Důstojníci </h2>
+        {% for officer in site.officers %}
+            {% if officer.published %}
+                {% include officer.html officer=officer %}
+            {% endif %}
+        {% endfor %}
+    </section>
+</div>
+
+
+{% assign articles = site.articles |sort: date %}
+{% for article in articles reversed %}
+    {% if article.published and article.date < site.time %}
+        {% include preview.html article=article %}
+    {% endif %}
+{% endfor %}
+
+
+<footer class="dark minor">
+    Tyrn Gorthad 2019
+</footer>

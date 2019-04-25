@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> admin </title>
+    <link rel="stylesheet" href="/stat/simplemde.min.css">
+    <script src="/stat/simplemde.min.js" charset="utf-8"></script>
+    <script>
+      simplemde = null;
+      window.addEventListener('load', function() {
+        simplemde = new SimpleMDE({
+          element: document.getElementById("editor"),
+          autoDownloadFontAwesome: false,
+          spellChecker: false,
+          forceSync: true,
+          renderingConfig: {
+            singleLineBreaks: false,
+          },
+          toolbar: [
+            "bold", "italic",
+            { name: "img",
+              action: async function(editor){
+                const cm = editor.codemirror;
+                let img = await selectImg();
+                if (!img) return;
+                if (img.startsWith('gorthad')) img = img.slice(7);
+                cm.replaceSelection(`![](${img})`);
+                cm.focus();
+              },
+              className: "fa fa-picture-o",
+              title: "Image",
+            },
+            "|",
+            "heading-2", "heading-3", "|",
+            "preview", "side-by-side",
+            { name: "help",
+              action: () => document.getElementById('help').hidden = false,
+              className: "fa fa-question-circle",
+              title: "Help",
+            },
+            "|",
+            { name: "publish",
+              action: publish,
+              className: "fa fa-publish",
+              title: "Save",
+            },
+            "|",
+            { name: "exit",
+              action: () => {
+                document.getElementById('init').hidden = false;
+                document.getElementById('form').reset();
+              },
+              className: "fa fa-exit",
+              title: "Exit (unsaved changes will be lost)",
+            },
+          ],
+        });
+        setTimeout(function(){
+          if (!simplemde.isFullscreenActive())
+            simplemde.toggleFullScreen(simplemde);
+        });
+      });
+      window.addEventListener('load', function() {
+        fetch('https://then0rth.pythonanywhere.com/gorthad/touch', {
+          method: 'PUT',
+          headers: head(),
+        }).then(response => response.json())
+          .then(drawInit);
+      });
+      function drawInit(data) {
+        const initEl = document.getElementById('init');
+        const selectEl = initEl.querySelector('select');
+        const imgList = initEl.querySelector('#imgs');
+        const imgSelect = document.querySelector('#select-img select');
+        imgSelect.innerHTML = `<option value=""></option>`;
+        imgList.innerHTML = ``;
+        selectEl.innerHTML = `<option value=""></option>`;
+        for (const file_info of data) {
+          const fname = file_info.path;
+          if (fname.startsWith('gorthad/img/')) {
+            imgSelect.innerHTML += `<option value="${fname}">${fname}</option>`;
+            imgList.innerHTML += `<li>
+                <button type="button"
+                  onclick="previewImg('${fname}')"
+                  title="preview"
+                >
+                  🔎
+                </button>
+                ${fname}
+                <i>${Math.round(file_info.size / 1000)}kB</i>
+                <button type="button" onclick="delImg('${fname}')" title="delete">
+                  ␡
+                </button>
+              </li>`;
+          } else
+            selectEl.innerHTML += `<option value="${fname}">${fname}</option>`;
+        }
+        document.getElementById('loading').hidden = true;
+      }
+      function selectImg() {
+        const dialog = document.getElementById('select-img');
+        dialog.hidden = false;
+        const select = dialog.querySelector('select');
+        const input = dialog.querySelector('input');
+        return (new Promise(resolve => {
+          dialog.querySelector('button').onclick = () => resolve(undefined);
+          select.onchange = event => resolve(event.target.value);
+          input.onchange = event => resolve(newImg(event));
+        })).then(function(val) {
+          dialog.hidden = true;
+          select.value = '';
+          input.value = '';
+          return val;
+        });
+      }
+      function openFile(name) {
+        console.log('fname', name);
+        document.getElementById('loading').hidden = false;
+        document.getElementById('init').hidden = true;
+        fetch('https://then0rth.pythonanywhere.com/gorthad/' + name, {
+          cache: "no-cache",
+          headers: head(),
+        })
+        .then(r => r.text())
+        .then(openEditor);
+      }
+      function openEditor(text) {
+        document.getElementById('loading').hidden = true;
+        simplemde.value(text);
+      }
+      function publish() {
+        const form = new FormData(document.getElementById('form'));
+        document.getElementById('loading').hidden = false;
+        fetch("https://then0rth.pythonanywhere.com/gorthad/publish", {
+          method: "POST",
+          body: form,
+          headers: head()
+        }).then(function(response) {
+          console.log(response.body);
+          document.getElementById('loading').hidden = true;
+          if (!response.ok)
+            alert(response.body);
+        });
+      }
+      function create(fname, body) {
+        document.getElementById('loading').hidden = false;
+        fetch("https://then0rth.pythonanywhere.com/gorthad/" + fname, {
+          method: "POST",
+          body: body,
+          headers: head(),
+        }).then(r => r.json())
+          .then(drawInit);
+      }
+      function newFile(dir) {
+        const name = prompt('file name (without extension) (e.g. basic-formations)');
+        name && create(`gorthad/${dir}/${name}.md`);
+      }
+      function newImg(event) {
+        if (!event.target.files.length)
+          return;
+        const form = new FormData(event.target.form);
+        const name = prompt('File name (with extension) (e.g. shield.jpg)',
+                            event.target.files[0].name);
+        name && create('gorthad/img/' + name, form)
+        return name && ('gorthad/img/' + name);
+      }
+      function delImg(fname) {
+        document.getElementById('loading').hidden = false;
+        fetch("https://then0rth.pythonanywhere.com/gorthad/" + fname, {
+          method: "DELETE",
+          headers: head(),
+        }).then(r => r.json())
+          .then(drawInit);
+      }
+      function head() {
+        let key = sessionStorage.getItem('key');
+        if (!key) {
+          key = prompt('access code');
+          sessionStorage.setItem('key', key);
+        }
+        return { key: key };
+      }
+      function previewImg(fname) {
+        const dialog = document.getElementById('img-preview');
+        if (fname.startsWith('gorthad/'))
+          fname = fname.slice(7);
+        const close = `document.getElementById('img-preview').innerHTML = '';
+                       document.getElementById('img-preview').hidden = true` ;
+        dialog.innerHTML = `
+          <button type="button" onclick="${close}"> zpět </button>
+          <hr />
+          <div> ${fname} </div>
+          <img src="${fname}?touch=${Date.now()}" alt="" />`;
+        dialog.hidden = false;
+      }
+      setInterval(function() {
+        document.querySelectorAll('img').forEach(img => {
+          if (img.naturalWidth)
+            return;
+          img.src = `${img.src.split('?', 1)[0]}?touch=${Date.now()}`;
+        });
+      }, 5000);
+    </script>
+    <style>
+      html { font-family: sans-serif; font-size: 1rem; }
+      code, pre { background-color: #eee; padding: 3px; border-radius: 5px; }
+      .fa-bold::before {
+        content: "B";
+        font-weight: bold;
+      }
+      .fa-italic::before {
+        content: "I";
+        font-style: italic;
+      }
+      .fa-strikethrough::before {
+        content: "S";
+        text-decoration: line-through;
+      }
+      .fa-header::before { content: "H"; }
+      .fa-eye::before { content: "👁"; }
+      .fa-columns::before { content: "ǁ"; }
+      .fa-arrows-alt::before { content: "⤢"; }
+      .fa-question-circle::before { content: "?"; }
+      .fa-picture-o::before { content: "🖼"; }
+      .fa-publish::before { content: "✓"; }
+      .fa-exit::before { content: "❌"; }
+      .dialog {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background-color: #ddd;
+        padding: 10vw 10vh;
+        overflow-y:  auto;
+      }
+      #loading {
+        z-index: 11;
+        text-align: center;
+      }
+      #loading::before {
+        content: " ";
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        border: 0.2rem solid dimgray;
+        border-bottom-color: transparent;
+        border-radius: 100%;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-name: load;
+        animation-iteration-count: infinite;
+      }
+      @keyframes load {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .editor-preview > hr:first-child,
+      .editor-preview > hr:first-child + p,
+      .editor-preview > hr:first-child + p + h2,
+      .editor-preview > hr:first-child + p + hr,
+      .editor-preview-side > hr:first-child,
+      .editor-preview-side > hr:first-child + p,
+      .editor-preview-side > hr:first-child + p + h2,
+      .editor-preview-side > hr:first-child + p + hr
+      { display: none; }
+      .editor-preview img, .editor-preview-side img
+      { max-width: 100%; }
+      .editor-preview > p, .editor-preview-side > p
+      { clear: left; }
+      .editor-preview > p >  img, .editor-preview-side > p > img
+      { float: left; }
+    </style>
+  </head>
+  <body>
+      <form id="form" onsubmit="event.preventDefault()"></form>
+      <textarea id="editor" name="editor" form="form"></textarea>
+      <div id="loading" class="dialog">
+          loading...
+      </div>
+      <div id="init" class="dialog">
+        <button type="button"  onclick="document.getElementById('help').hidden=!1">
+          nápověda
+        </button>
+        <p> Loadingy můžou být trochu delší, ale typicky ne více než minuta, to
+            už je asi něco špatně. </p>
+        <hr>
+        <label> Editovat
+            <select name="file"
+              onchange="openFile(this.value)"
+              form="form"
+            >
+              <option value=""></option>
+            </select>
+        </label>
+        <button type="button" onclick="newFile('_articles')">+ nový článek</button>
+        <button type="button" onclick="newFile('_officers')">+ nový důstojník</button>
+        <hr>
+        <ul id="imgs">
+        </ul>
+        <i> <code>index-background.jpeg</code> je použit jako pozadí úvodní stránky.
+            Ostatní obrázky jsou použity v jednotlivých <code>.md</code> dokumentech,
+            můžou mít tedy libovolná jména. Pro změnu některého z obrázků stačí nahrát
+            nový a dát mu stejné jméno (změna se projeví až za chvíli). </i>
+        <hr>
+        <form id="img-form"
+          onsubmit="event.preventDefault()"
+          enctype="multipart/form-data"
+        >
+          <label> Nahrát obrázek
+            <input type="file" name="file" onchange="newImg(event)">
+          </label>
+        </form>
+      </div>
+
+      <div id="select-img" class="dialog" hidden>
+        <button type="button"> zrušit </button>
+        <hr>
+        <label> Vložit již nahraný obrázek
+          <select>
+            <option value=""></option>
+          </select>
+        </label>
+        <hr>
+        <form onsubmit="event.preventDefault()" enctype="multipart/form-data">
+          <label> Nahrát a vložit obrázek
+            <input type="file" name="file">
+          </label>
+        </form>
+        <i> Chvíli trvá než se nahraný obrázek zobrazí (20sec ~ 1min) </i>
+      </div>
+
+      <div id="img-preview" class="dialog" hidden>
+      </div>
+
+      <div id="help" class="dialog" hidden>
+        <button type="button" onclick="document.getElementById('help').hidden=!0">
+          zavřít nápovědu
+        </button>
+        <p>
+          Články jsou ve formátu markdown (.md). Navíc mají nazačátku hlavičku
+          oddělenou <code>---</code>, ve formátu <code>klíč: hodnota</code>,
+          možný obsah se liší:
+        </p>
+        <dl>
+          <dt> <code>_articles</code> </dt>
+          <dd> <code>title</code>: jméno článku (Nadpis) </dd>
+          <dd> <code>date</code>: datum ve formátu RRRR-MM-DD, články s datem
+               v budoucnu nebudou zobrazeny </dd>
+          <dd> <code>img</code>: hlavní obrázek článku, bez cesty (např.
+               <code>tst.jpeg</code>) </dd>
+          <dd> <code>author</code>: <code>short</code> oficíra (musí být v
+               <code>_officers</code> a mít v hlavičce <code>short</code>) </dd>
+          <dd> Například
+<pre style="margin-top: 0"><code>---
+title: Údržba zbroje
+date: 2019-04-21
+img: helmet.jpeg
+author: Mal
+---
+
+Zbroj by se měla mazat, třeba WDčkem.</code></pre></dd>
+          <dt> <code>_officers</code> </dt>
+          <dd> <code>name</code>: jméno </dd>
+          <dd> <code>short</code>: zkratka jména </dd>
+          <dd> <code>house</code>: rodina </dd>
+          <dd> <code>rank</code>: hodnost </dd>
+          <dd> <code>img</code>: malý obrázek (čtverec), profilovka </dd>
+          <dd> <code>big</code>: velký obrázek, pozadí stránky důstojníka </dd>
+          <dt> <code>_includes/home.md</code> </dt>
+          <dd> Nemá hlavičku </dd>
+          <dd> Má hlavní nadpis pomocí <code>#</code> (ostatní stránky mají
+               hlavní nadpis v hlavičce) </dd>
+          <dd> Zobrazuje se na úvodní stránce jako první věc. </dd>
+        </dl>
+        <p> <code>published: false</code> znamená že daný článek ještě není
+            viditelný na webu. <code>published: true</code> ho zveřejní. </p>
+      </div>
+  </body>
+</html>

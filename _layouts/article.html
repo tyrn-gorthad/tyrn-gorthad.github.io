@@ -1,0 +1,64 @@
+---
+layout: base
+---
+<header>
+    <a href="/" class="hover"> &#8592; Domů </a>
+    <img src="/img/{{ page.img }}" alt="">
+    <h1> {{ page.title }} </h1>
+    {% if page.date %}
+        <time datetime="{{ page.date |date_to_xmlschema }}">
+            {{ page.date |date: '%d. %m. %Y' }}
+        </time>
+    {% endif %}
+</header>
+<main>
+    {% if page.author %}
+        {% for officer in site.officers %}
+            {% if officer.short == page.author %}
+                {% include officer.html officer=officer %}
+            {% endif %}
+        {%  endfor %}
+    {% endif %}
+    {{ content }}
+</main>
+<footer>
+    {% assign articles = site.articles |sort: date %}
+    <dl class="stripe">
+        {% capture older_article %}
+            {% for article in articles reversed %}
+                {% if article.title == page.title and article.date == page.date %}
+                    {% assign older_ready = true %}
+                {% elsif older_ready %}
+                    {% include preview.html article=article %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+        {% endcapture %}
+        <dt class="minor">
+            {% if older_article contains "/" %}
+                Starší:
+            {% endif %}
+        </dt>
+        <dd>
+            {{ older_article }}
+        </dd>
+        {% capture newer_article %}
+            {% for article in articles %}
+                {% if article.title == page.title and article.date == page.date %}
+                    {% assign newer_ready = true %}
+                {% elsif newer_ready %}
+                    {% include preview.html article=article %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+        {% endcapture %}
+        <dt class="minor">
+            {% if newer_article contains "/" %}
+                Novější:
+            {% endif %}
+        </dt>
+        <dd>
+            {{ newer_article }}
+        </dd>
+    </dl>
+</footer>

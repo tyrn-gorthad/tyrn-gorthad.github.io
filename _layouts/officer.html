@@ -1,0 +1,46 @@
+---
+layout: base
+---
+<header>
+    <a href="/" class="hover"> &#8592; Domů </a>
+    <img src="/img/{{ page.big }}" alt="">
+    <figure class="portrait">
+        <img src="/img/{{ page.img }}" alt="">
+    </figure>
+    <h1>
+        {{ page.name }}
+        {% unless page.house_is_title %}
+            {{ page.house }}
+        {% endunless %}
+    </h1>
+    <p>
+        {{ page.rank }}
+        {% if page.house_is_title %}
+            / {{ page.house }}
+        {% endif %}
+    </p>
+</header>
+<main>
+    {{ content }}
+</main>
+
+<footer class="stripe">
+    {% assign articles = site.articles |sort: date %}
+    {% for article in articles reversed %}
+        {% if article.published
+              and article.date < site.time
+              and article.author == page.short
+        %}
+            {% if forloop.first %}
+                <span class="minor head"> Články důstojníka: </span>
+            {% endif %}
+            {% include preview.html article=article %}
+        {% endif %}
+    {% endfor %}
+    <span class="minor head"> Ostatní důstojníci: </span>
+    {% for officer in site.officers %}
+        {% if officer.name != page.name %}
+            {% include officer.html officer=officer %}
+        {% endif %}
+    {% endfor %}
+</footer>
