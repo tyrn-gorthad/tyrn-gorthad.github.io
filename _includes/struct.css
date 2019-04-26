@@ -241,3 +241,10 @@ dl.stripe > dd {
         grid-row: 2;
     }
 }
+
+
+
+pre {
+    overflow: auto;
+}
+
