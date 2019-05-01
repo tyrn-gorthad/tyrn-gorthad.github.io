@@ -5,6 +5,7 @@ house: Neled Nín
 rank: Kapitán
 img: nth.png
 big: tst.jpeg
+display_order: 2
 ---
 
 Hello there!

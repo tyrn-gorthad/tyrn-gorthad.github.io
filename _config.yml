@@ -33,6 +33,7 @@ defaults:
     values:
       layout: officer
       published: true
+      display_order: 10
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

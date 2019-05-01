@@ -13,7 +13,8 @@ title:
 
     <section class="officers">
         <h2> Důstojníci </h2>
-        {% for officer in site.officers %}
+        {% assign officers = site.officers |sort: display_order %}
+        {% for officer in officers %}
             {% if officer.published %}
                 {% include officer.html officer=officer %}
             {% endif %}
