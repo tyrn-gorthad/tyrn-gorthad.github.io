@@ -6,4 +6,4 @@ author: Zkratka jmena oficera (to co ma v hlavicce v short:)
 published: false
 ---
 
-Lorem ipsum dolor sit amet.
+*jejich barvy a znaky*
