@@ -7,3 +7,19 @@ published: false
 ---
 
 *jejich barvy a znaky*
+
+Neled Nín - tvář / hvězda (5cíp) - ?
+
+Angmar - tvář / ? - červenou
+
+Farmáří - tvář / ? - ?
+
+___
+
+červená
+
+fialová
+
+modrá
+
+Polovina bílé tváře pro všechny
