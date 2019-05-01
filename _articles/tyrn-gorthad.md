@@ -20,3 +20,7 @@ During the Second Age they were fairly numerous, and when they met with the Núm
 After the split of Arnor in T.A. 861 the Barrow-downs became the capital of Cardolan. After Rhudaur fell to Angmar in 1409, the Dúnedain of Cardolan entrenched themselves here, but eventually the realm fell. Around T.A. 1636 the Witch-king sent the Barrow-wights that haunted the hills, preventing any resettlement; after Arthedain once again claimed the kingship over all of Arnor the Dúnedain tried to recolonize Cardolan, but this failed because of the Barrow-wights.
 
 When the Black Riders came north in their hunt for the One Ring, the Lord of the Nazgûl stayed in the Barrow-downs for a few days, rousing the Barrow-wights. On 28 September 3018 Frodo Baggins and company were trapped in the downs by a wight, probably in the same cairn which held the grave of the last prince of Cardolan. They were rescued by Tom Bombadil, and there got their swords.
+
+---
+
+*O lidech gorthadu*
