@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs" dir="ltr">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <title>
             {% capture title %}
                 {% if page.rank and page.name %}
@@ -13,8 +13,8 @@
             {% endcapture %}
             {{ title }}
         </title>
-        <link rel="stylesheet" href="/stat/main.css">
-        <meta property="og:title" content="{{ title |escape }}" />
+        <link rel="stylesheet" href="/stat/main.css" />
+        <meta property="og:title" content="{{ title |escape |strip }}" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
         {% if page.img %}
@@ -23,6 +23,19 @@
             {% assign page_img = 'index-background.jpeg' %}
         {% endif %}
         <meta property="og:image" content="{{ site.url }}/img/{{ page_img }}" />
+        <meta property="og:locale" content="cs_CZ" />
+        {% if page.excerpt %}
+            <meta property="og:description"
+                  content="{{ page.excerpt |strip_html | slice: 0, 200 |lstrip
+                                           |escape }}" />
+        {% else %}
+            {% capture home_md %}
+                {% include home.md %}
+            {% endcapture %}
+            <meta property="og:description"
+                  content="{{ home_md |markdownify |strip_html |lstrip
+                                      |slice: 0, 200 |escape }}">
+        {% endif %}
     </head>
     <body>
         {{ content }}
