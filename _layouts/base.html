@@ -4,14 +4,26 @@
         <meta charset="utf-8">
         <meta name="robots" content="noindex">
         <title>
-            {% if page.rank and page.name %}
-                {{ page.rank }} {{ page.name }} |
-            {% elsif page.title %}
-                {{ page.title }} |
-            {% endif %}
-            {{ site.title }}
+            {% capture title %}
+                {% if page.rank and page.name %}
+                    {{ page.rank }} {{ page.name }} |
+                {% elsif page.title %}
+                    {{ page.title }} |
+                {% endif %}
+                {{ site.title }}
+            {% endcapture %}
+            {{ title }}
         </title>
         <link rel="stylesheet" href="/stat/main.css">
+        <meta property="og:title" content="{{ title |escape }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+        {% if page.img %}
+            {% assign page_img = page.img %}
+        {% else %}
+            {% assign page_img = 'index-background.jpeg' %}
+        {% endif %}
+        <meta property="og:image" content="{{ site.url }}/img/{{ page_img }}" />
     </head>
     <body>
         {{ content }}
