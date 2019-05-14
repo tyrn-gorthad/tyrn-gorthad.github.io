@@ -1,25 +1,13 @@
 ---
-title: Významné rodiny
-date: 2019-06-01
+title: Rodiny 
+date: 2019-15-05
 img: fotka na pozadi (bez /img/, napr. mihule.jpg)
-author: Zkratka jmena oficera (to co ma v hlavicce v short:)
-published: false
+author: Mal
+published: true
 ---
 
-*jejich barvy a znaky*
+Neled Nín - V erbu mají bílou nebo stříbrnou tvář Černokněžného krále půlenou purpurovou pěticípou hvězdou hvězdou Arnoru
 
-Neled Nín - tvář / hvězda (5cíp) - ?
+Gelir Dír - V erbu mají bílou nebo stříbrnou tvář Černokněžného krále korunovanou rudou korunou Melkora, valar moci a pravdy doprovázenou runovými nápisy "Melkor antae sanya" a "Angmar antae aira cuile"
 
-Angmar - tvář / ? - červenou
-
-Farmáří - tvář / ? - ?
-
-___
-
-červená
-
-fialová
-
-modrá
-
-Polovina bílé tváře pro všechny
+Joel Roa - V erbu mají bílou nebo stříbrnou tvář Černokněžného krále na indigové lilii
