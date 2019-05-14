@@ -11,14 +11,10 @@ Vrchy byly prvně osídleny muži spřízněnými s Edainy v Prvním Věku, spol
 
 Během druhého věku byli celkem početní a když se setkali s Númenorejci, Mohylové vrchy byly první místo kde se Dúnádánští emigranti z Númenoru usadili. Když se Elendil vrátil do Středozemě, Vrchy byly začleněny do království Anoru. Byly také obyvately Arnoru ctěny kvůli velkým mohylám do kterých pohřbývali své lordy a Krále.
 
-After the split of Arnor in T.A. 861 the Barrow-downs became the capital of Cardolan. After Rhudaur fell to Angmar in 1409, the Dúnedain of Cardolan entrenched themselves here, but eventually the realm fell. Around T.A. 1636 the Witch-king sent the Barrow-wights that haunted the hills, preventing any resettlement; after Arthedain once again claimed the kingship over all of Arnor the Dúnedain tried to recolonize Cardolan, but this failed because of the Barrow-wights.
+Po rozpadu Arnoru v roce 861 se Tyrn Gorthad stal hlavním městem nástupnické říše Cardolanu. Když roku 1409 Rhuadur padl pod nátlakem Angmaru, Dúnadáni Cardolanu se opevnili právě zde ale nakonec i jejich říše padla. Kolem roku 1636 Černokněžný král vyslal mohylové přízraky aby strašili na vrších, zabraňujíc tak opětovnému osídlení. Poté co se Arthedain znovu chopil vlády nad celým Arnorem, pokusil se znovu kolonizovat Cardolan, kvůli přízrakům však neuspěl.
 
+-
 
-
-When the Black Riders came north in their hunt for the One Ring, the Lord of the Nazgûl stayed in the Barrow-downs for a few days, rousing the Barrow-wights. On 28 September 3018 Frodo Baggins and company were trapped in the downs by a wight, probably in the same cairn which held the grave of the last prince of Cardolan. They were rescued by Tom Bombadil, and there got their swords.
-
-
+Obyvatelé Hůrky a dalších okolních usedlostí ví že v horách a kopcích západu kromě skřetů žijí i zlí lidé. Málokdo se však odváží pátrat po tom kde žijí. Když se někdo přece jen vydá do vrchů nebo hor, nevrátí se živý.
 
 ---
-
-*O lidech gorthadu*
