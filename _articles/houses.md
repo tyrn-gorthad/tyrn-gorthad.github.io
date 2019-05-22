@@ -1,7 +1,7 @@
 ---
 title: Mocné rodiny Gorthadfu
 date: 2019-05-15
-img: star.jpeg
+img: header.jpeg
 author: Mal
 published: true
 ---
