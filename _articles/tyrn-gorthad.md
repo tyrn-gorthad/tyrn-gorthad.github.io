@@ -13,8 +13,4 @@ Během druhého věku byli celkem početní a když se setkali s Númenorejci, M
 
 Po rozpadu Arnoru v roce 861 se Tyrn Gorthad stal hlavním městem nástupnické říše Cardolanu. Když roku 1409 Rhuadur padl pod nátlakem Angmaru, Dúnadáni Cardolanu se opevnili právě zde ale nakonec i jejich říše padla. Kolem roku 1636 Černokněžný král vyslal mohylové přízraky aby strašili na vrších, zabraňujíc tak opětovnému osídlení. Poté co se Arthedain znovu chopil vlády nad celým Arnorem, pokusil se znovu kolonizovat Cardolan, kvůli přízrakům však neuspěl.
 
--
-
-Obyvatelé Hůrky a dalších okolních usedlostí ví že v horách a kopcích západu kromě skřetů žijí i zlí lidé. Málokdo se však odváží pátrat po tom kde žijí. Když se někdo přece jen vydá do vrchů nebo hor, nevrátí se živý.
-
 ---
