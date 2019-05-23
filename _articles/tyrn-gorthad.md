@@ -9,7 +9,7 @@ author: Mal
 Kultisté z Tyrn Gorthadu už léta slouží mohylovým duchům, a protože už dlouho udržují obchodní styky se skřety z Gundabadu, dozvěděli se o výpravě k Osamělé hoře, a rozhodli se přinést svým bohům dar v podobě části dračího pokladu. Obyvatelé Tyrn Gorthadu si udrželi něco ze vznešenosti Dúnadanů a jejich vzhled je proto mnohem upravenější než skřetí. Nechodí v jiné barvě než černé, a jejich oděvy často zdobí starobylé runy a symboly. Při svých temných rituálech si také roztírají po pažích i obličejích krev svých obětí.
 -B5A ”Rody, klany, prapory”*
 
---
+---
 
 Mohylové vrchy zvané také Tyrn Gorthad jsou kopcovitá oblast na východ od Kraje a Starého Hvozdu, jihozápadně of vesnice Hůrky. Věrné svému jméu mnoho kopců je zde korunováno obelisky a mohylami.
 
