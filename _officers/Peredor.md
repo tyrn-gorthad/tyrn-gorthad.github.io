@@ -1,8 +1,8 @@
 ---
-name: Jmeno
-short: Zkratka Jmena
-house: Jmeno rodiny
-rank: Hodnost
+name: Erendor Tiuca
+short: Erendor
+house: Geledír
+rank: Lord
 img: profilovka (bez /img/, napr.: mal.jpg)
 big: fotka na pozadi (bez /img/, napr. mal-pozadi.jpg)
 published: false
