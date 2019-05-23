@@ -1,5 +1,5 @@
 ---
-title: Mocné rodiny Gorthadfu
+title: Mocné rodiny Gorthadu
 date: 2019-05-15
 img: header.jpeg
 author: Mal
