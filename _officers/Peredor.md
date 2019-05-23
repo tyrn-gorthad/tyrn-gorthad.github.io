@@ -1,6 +1,6 @@
 ---
 name: Erendor Tiuca
-short: Erendor
+short: Eren
 house: Geledír
 rank: Lord
 img: profilovka (bez /img/, napr.: mal.jpg)
