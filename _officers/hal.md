@@ -3,7 +3,7 @@ name: Hallacar
 short: Hal
 house: Neled Nín
 rank: Kapitán
-img: nth.png
+img: Hal_mugshot.jpg
 big: tst.jpeg
 display_order: 2
 ---
