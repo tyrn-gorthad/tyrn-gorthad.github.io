@@ -4,7 +4,11 @@
         {{ include.article.date |date: '%d. %m. %Y' }}
     </time>
     <h2> {{ include.article.title }} </h2>
+    {% if include.article.excerpt.size > 100 %}
+        <p> {{ include.article.excerpt | slice: 0, 100 }}... </p>
+    {% else %}
     <p> {{ include.article.excerpt }} </p>
+    {% endif %}
     <a href="{{ include.article.url }}" class="minor hover">
         &#8594; Celý článek: {{ include.article.title }}
     </a>
