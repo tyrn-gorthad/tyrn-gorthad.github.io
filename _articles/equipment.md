@@ -2,9 +2,8 @@
 title: Vybavení
 date: 2019-06-04
 img: placeholder.jpg
-author: Zkratka jmena oficera (to co ma v hlavicce v short:)
+author: Mal
 published: false
 ---
 
-Lorem ipsum dolor sit amet.
-
+What do people of GOrthad use for fighting, camping and other related activities, what should you take from practical point of view....
