@@ -5,7 +5,7 @@ house: Geledír
 rank: Vrchní lovčí
 img: eren_mugshot.jpg
 big: eren_bg.jpg
-published: false
+published: true
 ---
 
 Lord of the 
