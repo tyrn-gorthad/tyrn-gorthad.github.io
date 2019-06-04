@@ -2,10 +2,10 @@
 name: Erendor Tiuca
 short: Eren
 house: Geledír
-rank: Lord
-img: profilovka (bez /img/, napr. mal.jpg)
-big: fotka na pozadi (bez /img/, napr. mal-pozadi.jpg)
+rank: Vrchní lovčí
+img: eren_mugshot.jpg
+big: eren_bg.jpg
 published: false
 ---
 
-Lorem ipsum dolor sit amet.
+Lord of the 
