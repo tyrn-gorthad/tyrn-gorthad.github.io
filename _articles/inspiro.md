@@ -9,10 +9,9 @@ published: true
 ## Oficiální inspiromat
 
 ### Tyrn Gorthad
-![](/img/origin_inspiro3.jpg)
-
 Obyvatelé Tyrn Gorthadu si udrželi něco ze vznešenosti Dúnadanůa jejich vzhled je proto mnohem upravenější, než skřetí. Nechodí v jiné barvě, než černé, a jejich oděvy často zdobí starobylé runy a symboly. Při svých temných rituálech si také roztírají po pažích i obličejích krev svých obětí.
 “Pozn. autora: Vzhledem k tomu, že je Tyrn Gorthad velmi settingově specifický, a je na B5A uveden poprvé, zaměříme se v inspiromatu na požadované kostýmové prvky zvlášť. Modelového vojáka od hlavy k patě bohužel nemáme k dispozici.I proto byste měli kostýmu věnovat úsilí a pak otravovat fotografy, aby vás cvakli –nenechte si ujít příležitost objevit se v inspiromatu na příští rok!
+![](/img/origin_inspiro3.jpg)
 
 SYMBOLY, WARPAINT
 
