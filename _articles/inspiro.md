@@ -86,7 +86,7 @@ I'm quite pleased with this late-period karma as more sleek and functional than 
 
 and that's a leopard skin tied around his shoulders, a popular item among legionnaires in Harad.*
 
-![](/img/numenorean_armor_by_turnermohan_d6bm4bt-pre.jpg)
+![](/img/ar_pharazon_by_turnermohan_d6e3zme-pre.jpg)
 
 *Ar-Pharazon the Golden, the twenty fifth and last King of Numenor. He defeated and captured Sauron, only to end up corrupted and tricked by him into worshipping Morgoth and declaring war on the Valar, resulting in the drowning of Numenor and the death of the great majority of it's people.
 
