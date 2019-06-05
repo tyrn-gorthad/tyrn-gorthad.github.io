@@ -24,11 +24,11 @@ Ozdobit runami můžete i svůj oděv – taková kápě je na to ideální. V n
 
 
 celou abecedu včetně číslovek naleznete na 
-http://www.omniglot.com/conscripts/adunaroth.html
+*http://www.omniglot.com/conscripts/adunaroth.html*
 
 
-Tengwar třeba na wiki
-https://cs.wikipedia.org/wiki/Tengwar
+Tengwar třeba na wiki 
+*https://cs.wikipedia.org/wiki/Tengwar*
 
 
 ČERNÁ BARVA
