@@ -1,7 +1,7 @@
 ---
 title: Inspiro
 date: 2019-06-05
-img: men_at_war.jpg
+img: men_at_war_header.jpg
 author: Mal
 published: true
 ---
