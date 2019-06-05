@@ -22,10 +22,15 @@ Nezapomínejte, že barva warpaintu by měla co nejvěrněji připomínat krev, 
 Ozdobit runami můžete i svůj oděv – taková kápě je na to ideální. V našem případě bude samozřejmě černá. Použít můžete elfský tengwar, nebo třeba fanouškovské zpracování dávného písma Númenorejců.
 ![](/img/origin_inspiro1.png)
 
+
 celou abecedu včetně číslovek naleznete na 
+
 http://www.omniglot.com/conscripts/adunaroth.htm
+
 Tengwar třeba na wiki
+
 https://cs.wikipedia.org/wiki/Tengwar
+
 
 ČERNÁ BARVA
 Použití černé barvyje dalším specifikem tohoto rodu.Můžete být upravenější, nebo ošumělejší, stejně jako vkaždéjiné armádě. Zachovejte však civilizovanější vzhled. Jste vyššího rodu, než upadající, divocí vrchovci.Hadráky máme rádi! Nezapomeňte, že dlouhý plášť není do bitvy příliš praktický, volte spíše kápě.
