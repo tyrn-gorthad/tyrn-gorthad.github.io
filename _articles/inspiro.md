@@ -32,10 +32,17 @@ Tengwar třeba na wiki
 
 ČERNÁ BARVA
 Použití černé barvyje dalším specifikem tohoto rodu.Můžete být upravenější, nebo ošumělejší, stejně jako vkaždéjiné armádě. Zachovejte však civilizovanější vzhled. Jste vyššího rodu, než upadající, divocí vrchovci.Hadráky máme rádi! Nezapomeňte, že dlouhý plášť není do bitvy příliš praktický, volte spíše kápě.
+
 ![](/img/origin_inspiro2a.png)
+
 Lehké zbroje jsou taky fajn!
+
 ![](/img/origin_inspiro2.png)
+
 No, a kdo se necítí dobře bez pořádné kovové zbroje...(Nezapomínejte si místo ryby Tullyů přimyslet třeba pokřivenou, znesvěcenou hvězdu Arnoru)
+
 ![](/img/origin_inspiroa.png)
+
 Nebo je libo něco složitějšího? Inspirujte se high fantasy, jen mějte na mysli, že stále preferujeme přírodní materiály a zbroje byste měl mít funkční.
+
 ![](/img/origin_inspiro.png)
