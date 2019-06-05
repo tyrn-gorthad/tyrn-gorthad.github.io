@@ -2,8 +2,8 @@
 title: Inspiro
 date: 2019-06-05
 img: men_at_war.jpg
-author: Zkratka jmena oficera (to co ma v hlavicce v short:)
-published: false
+author: Mal
+published: true
 ---
 
 Oficiální inspiromat
