@@ -18,3 +18,5 @@ Stovky, ba tisíce let před prvními osadníky žili poblíž Starého Hvozdu "
 
 Tyrn Gorthad bojuje za přežití, za lepší zítřek kde se nemusejí skrývat před nepřáteli ze všech stran. Bojují protože jinak by se mohli sami snadno stát obětmi pro přízračné lordy. Budou bojovat až do konce protože věří ve své bohy, ve své předky a vůdce, že je povedou k prospěritě. TO BE CONTINUED...
 
+Na tomto článku se pracuje...pomalu
+![](/img/slow_work.jpeg)
