@@ -1,11 +1,11 @@
 ---
-name: Jmeno
-short: Zkratka Jmena
-house: Jmeno rodiny
-rank: Hodnost
-img: profilovka (bez /img/, napr. mal.jpg)
-big: fotka na pozadi (bez /img/, napr. mal-pozadi.jpg)
-published: false
+name: Katrina Biucca
+short: Kat
+house: Roan
+rank: Náčelnice
+img: Kat.jpg
+big: inspiro4.jpg
+published: true
 ---
 
 Lorem ipsum dolor sit amet.
