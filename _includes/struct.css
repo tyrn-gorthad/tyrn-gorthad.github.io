@@ -12,11 +12,12 @@ header {
     box-sizing: border-box;
 }
 header > a {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 2;
     padding: 0.2rem;
+    padding-right: 0.4rem;
 }
 header > img {
     width: 100%;

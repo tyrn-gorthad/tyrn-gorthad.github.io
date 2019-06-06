@@ -17,7 +17,7 @@ header::after {
                       url('/img/index-background.jpeg');
 }
 .hybrid-header > section, header > a {
-    background-color: rgba(53, 53, 53, 0.5);  /* #353535*/
+    background-color: rgba(53, 53, 53, 0.8);  /* #353535*/
 }
 
 
