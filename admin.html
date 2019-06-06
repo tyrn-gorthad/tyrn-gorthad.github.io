@@ -148,8 +148,8 @@
           method: "POST",
           body: body,
           headers: head(),
-        }).then(r => r.json())
-          .then(drawInit);
+        }).then(r => r.json());
+          // .then(drawInit);
       }
       function newFile(dir) {
         const name = prompt('file name (without extension) (e.g. basic-formations)');
