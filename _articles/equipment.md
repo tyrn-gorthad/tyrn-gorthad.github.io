@@ -1,9 +1,9 @@
 ---
-title: Titulek/hlavni nadpis
-date: 2019-06-01
-img: fotka na pozadi (bez /img/, napr. mihule.jpg)
-author: Zkratka jmena oficera (to co ma v hlavicce v short:)
+title: Vybavení
+date: 2019-06-04
+img: placeholder.jpg
+author: Mal
 published: false
 ---
 
-Lorem ipsum dolor sit amet.
+What do people of Gorthad use for fighting, camping and other related activities, what should you take with you from practical point of view....
